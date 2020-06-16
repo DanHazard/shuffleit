@@ -1,0 +1,105 @@
+Models(?)
+-Players
+-Teams
+-PlayerTeam
+-Leagues
+-Matches
+
+
+
+xPlayerStats (attribute)
+xTeamRecords (attribute)
+
+CRUD
+-Players
+	-Add a player
+	-remove a player
+-Teams
+	-Add a team (needs at least 4 players)
+	-Remove
+-PlayerTeam
+	-
+
+-League
+	-Add team to the league
+	-Remove a team
+
+-PlayerStats
+	-see their stats (READ)
+	-update their stats (UPDATE)
+-TeamRecords
+	-see their record (READ)
+	-update their record (UPDATE)
+
+Relationships:
+
+ Player ---- < PlayerTeams > ---- Team >-------< Match
+
+Player
+
+
+Player belongs to a team
+Team has many players
+League has many teams
+A player has many different stats
+A TeamRecord belongs to a team.
+
+Views:
+
+Player
+	-Create player page
+	-display stats
+	-display team
+Team
+	-create team page
+	-display players (links to player)
+	-display season record
+League:
+	-index of all teams (links to team)
+PlayerStats:
+	-let a player update their stats
+TeamRecords
+	-let a team update its record
+
+Schema:
+
+Player
+	-name
+	-team_id
+Team
+	-name
+	-wins (default 0)
+	-losses (default 0)
+Match
+	-LeagueID
+	-HomeTeamID
+	-AwayTeamID
+	-winner
+	-score
+League
+	-name
+
+
+Match completion - Winner is updated with +1 wins, loser +1 losses
+TotalScore
+
+Focus on building associations out today, build out models and seed data, and get association methods built correctly.
+Ex Player.first.team.teams
+
+Self joining many to many, check out the labs.
+
+
+
+
+
+
+
+
+PlayerStats
+	-PointsFor (default = 0)
+	-PointsAgainst
+	-PointsDiff
+TeamRecord
+	-record (default 0-0)
+
+Player >---- Team ----<PlayerStats
