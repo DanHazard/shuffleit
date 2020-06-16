@@ -11,5 +11,8 @@ class Team < ApplicationRecord
     self.teams_played_at_home + self.teams_played_on_road
   end
 
+  def all_matches_played
+    self.home_matches + self. away_matches
+  end
 
 end
