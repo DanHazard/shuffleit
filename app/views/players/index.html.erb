@@ -1,0 +1,6 @@
+<h1>Player List</h1>
+  <h3>List of Players:</h3>
+  <% @players.each do |f| %>
+
+  <li><%= link_to f.name, player_path(f.id) %></li>
+  <% end %> 
