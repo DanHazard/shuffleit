@@ -1,9 +1,16 @@
 <h1>New Player</h1>
 
+<% if @player.errors.any? %>
+  <% @player.errors.full_messages.each do |message| %>
+     <h3><%= message %> </h3>
+  <%end%>
+<%end%>
+
+
 <%= form_for @player do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
   <br>
-  <p>Select a team: <%= f.collection_select :team, Team.all, :id, :name %></p>
+  <p>Select a team: <%= f.collection_select :team_id, Team.all, :id, :name %></p>
   <%= f.submit %>
 <% end %>
