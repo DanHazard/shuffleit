@@ -6,15 +6,25 @@ class PlayersController < ApplicationController
 
   def show
     @player = Player.find(params[:id])
+    render :show
   end
 
   def new
     @player = Player.new
-    @teams = Team.all
   end
 
-  # def create
-  #   @player = Player.new
+  def create
+    new_player = Player.create(player_params)
+
+    redirect_to player_path(new_player.id) 
+  end
+
+
+  private
+  
+  def player_params
+    params.require(:player).permit(:name)
+  end
 
 
 end

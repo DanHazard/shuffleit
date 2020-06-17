@@ -12,7 +12,8 @@ class Team < ApplicationRecord
   end
 
   def all_matches_played
-    self.home_matches + self. away_matches
+    self.home_matches + self.away_matches
   end
 
+  
 end
