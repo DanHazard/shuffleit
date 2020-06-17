@@ -1,6 +1,9 @@
 <h1>New Player</h1>
 
 <%= form_for @player do |f| %>
-  <%= f.collection_select :team, Team.all, :id, :name %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <br>
+  <p>Select a team: <%= f.collection_select :team, Team.all, :id, :name %></p>
   <%= f.submit %>
 <% end %>
