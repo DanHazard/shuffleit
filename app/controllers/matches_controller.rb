@@ -8,7 +8,7 @@ class MatchesController < ApplicationController
     @match = Match.find(params[:id])
   end
 
-  
+
 
 
 end
