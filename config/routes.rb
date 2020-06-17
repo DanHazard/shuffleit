@@ -5,5 +5,8 @@ Rails.application.routes.draw do
   resources :leagues, only: [:show]
   resources :matches, only: [:index, :show, :create, :new, :edit]
 
+  resources :home, only: [:index]
+  root to: "homes#index"
+
 end
 

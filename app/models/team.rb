@@ -9,6 +9,8 @@ class Team < ApplicationRecord
 
   validates :name, presence: true
 
+  
+
   def all_teams_played
     self.teams_played_at_home + self.teams_played_on_road
   end
