@@ -7,6 +7,10 @@ class Team < ApplicationRecord
   has_many :away_matches, class_name: 'Match', foreign_key: :away_team_id, dependent: :destroy
   has_many :teams_played_on_road, through: :away_matches, source: :home_team
 
+  validates :name, presence: true
+
+  
+
   def all_teams_played
     self.teams_played_at_home + self.teams_played_on_road
   end
@@ -15,5 +19,5 @@ class Team < ApplicationRecord
     self.home_matches + self.away_matches
   end
 
-  
+
 end
