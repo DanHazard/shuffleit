@@ -20,12 +20,24 @@ class MatchesController < ApplicationController
     else
       render :new
     end
-
   end
-end
 
-private
 
-def match_params
-  params.require(:match).permit(:league_id, :home_team_id, :away_team_id, :winner, :home_team_score, :away_team_score)
+  def edit
+    @match = Match.find(params[:id])
+  end
+
+  def update
+    @match = Match.find(params[:id])
+    @match.update(match_params)
+    redirect_to @match
+  end
+
+
+  private
+
+  def match_params
+    params.require(:match).permit(:league_id, :home_team_id, :away_team_id, :winner, :home_team_score, :away_team_score)
+  end
+  
 end

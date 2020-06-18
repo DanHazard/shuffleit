@@ -17,5 +17,5 @@
   <%= info.label :away_team_score %>
   <%= info.text_field :away_team_score %><br><br>
   <div>Which team won: <%= info.collection_select :team_id, Team.all, :id, :name, {:selected => :team_id} %></div><br>
-  <%= submit_tag "Submit Match" %>
+  <%= info.submit  %>
 <% end %>
