@@ -1,8 +1,7 @@
-<h1>Leagues</h3>
+<h1 style="color:limegreen;">Leagues</h3>
 
- <% @leagues.each do |f| %>
-
+ <% @leagues.each do |f| %><br>
   <li><%= link_to f.name, league_path(f.id) %></li>
   <% end %> 
-
+  <br>
   <button><%= link_to 'Home', home_path %></button>

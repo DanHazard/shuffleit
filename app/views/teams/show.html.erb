@@ -1,6 +1,6 @@
 
 
-<div><%= @team.name %></div>
+<h3><%= @team.name %></h3>
 <% @team.players.each do |player| %>
   <li><%= link_to player.name, player_path(player.id)%></li>
 <% end %>
@@ -8,7 +8,8 @@
 <p>Win: <%= @team.wins %></p>
 <p>Losses: <%= @team.losses %></p>
 
-<%= link_to "Back to Teams", teams_path %>
-<br>
-<button><%= link_to "Edit Team", edit_team_path  %></button>
+<button><%= link_to "Back to Teams", teams_path %></button><br>
+
+<button><%= link_to "Edit Team", edit_team_path  %></button><br>
+
 <%= button_to 'Disband Team', team_path(@team), method: :delete %>
