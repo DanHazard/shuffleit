@@ -2,9 +2,10 @@
 <h3>Player Name: <%= @player.name %></h3>
 <h3>Team: <%= @player.team.name %></h3>
 
-<%= link_to "Back to Players", players_path %>
+
 <br>
-<button><%= link_to 'Home', home_path %></button>
-<button><%= link_to "Join Team", edit_player_path  %></button>
-<br>
-<%= button_to 'Drop Player', player_path(@player), method: :delete  %>
+
+<button><%= link_to "Change Team", edit_player_path  %></button>
+<br><br>
+<%= button_to 'Retire', player_path(@player), method: :delete  %><br><br>
+<button><%= link_to "Back to Players", players_path %></button>&nbsp&nbsp&nbsp<button><%= link_to 'Home', home_path %></button>

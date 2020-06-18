@@ -1,12 +1,11 @@
 <h1>Matches Homepage</h1>
 
 <h2> Played Games: <% @matches.each do |match|  %></h2>
-<br>
-   <li><%= link_to match.winner, match %></li>
+   <li><%= link_to match.home_team.name + ' VS. ' + match.away_team.name, match %></li>
 <% end %>
 
 <br>
-<button><%= link_to "Back Home", home_path %></button>
-<br>
-<br>
 <button><%= link_to "Add Match", new_match_path %></button>
+<br>
+<br>
+<button><%= link_to "Back Home", home_path %></button>

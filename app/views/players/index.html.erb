@@ -3,7 +3,7 @@
   <% @players.each do |f| %>
 
   <li><%= link_to f.name, player_path(f.id) %></li>
-  <% end %> 
+  <% end %>
   <br>
+  <button><%= link_to 'Add New Player', new_player_path %></button><br><br>
   <button><%= link_to 'Home', home_path %></button>
-  <button><%= link_to 'Add New Player', new_player_path %></button>
