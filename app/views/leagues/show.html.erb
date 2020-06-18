@@ -1,14 +1,12 @@
-<h1>Current Matches in this League</h1>
+<h1 style="color:midnightblue;">Matches Played</h1>
 
 
 <p><% @league.matches.each_with_index do |f, idx| %></p>
-  <h2>Match Number: <%= idx + 1 %></h2>
+  <h4>Match Number: <%= idx + 1 %></h4>
   <%= f.home_team.name %>
   <br>
   <%= f.away_team.name %>
   <br>
 <% end %>
-  
- 
-  
+  <br>
 <button><%= link_to 'League', leagues_path %></button>
