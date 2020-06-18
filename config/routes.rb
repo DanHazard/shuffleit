@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :players
   resources :teams 
   resources :leagues, only: [:index, :show]
-  resources :matches, only: [:index, :show, :create, :new, :edit]
+  resources :matches
 
   get '/home', to: 'homes#index'
   get '/home/:id', to: 'homes#index'
