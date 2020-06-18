@@ -34,6 +34,12 @@ class MatchesController < ApplicationController
   end
 #capture what they put home and away, validates one or the other . 
 
+  def destroy
+    @match = Match.find(params[:id])
+    @match.destroy
+    redirect_to matches_path
+  end
+
   private
 
   def match_params
