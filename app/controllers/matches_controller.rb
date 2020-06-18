@@ -12,7 +12,7 @@ class MatchesController < ApplicationController
   def new
     @match = Match.new
   end
-
+  
   def create
     @match = Match.new(match_params)
     if @match.save
@@ -27,5 +27,5 @@ end
 private
 
 def match_params
-  params.require(:match).permit(:home_team_id, :away_team_id, :winner, :home_team_score, :away_team_score)
+  params.require(:match).permit(:league_id, :home_team_id, :away_team_id, :winner, :home_team_score, :away_team_score)
 end

@@ -1,6 +1,10 @@
-<h1> Matches played</h1>
+<h1>Matches played</h1>
 
-<h3>Home Team: <%= @match.home_team_id.name %></h3>
-<h3>Away Team: <%= @match.away_team_id.name %></h3>
-
-<%= link_to "Back to Players", players_path %>
+<h3>Home Team: <%= @match.home_team.name %></h3>
+<h3>Away Team: <%= @match.away_team.name %></h3>
+<h3>Winning Team: <%= @match.winner %></h3>
+<div><%= @match.home_team.name %>: <%= @match.home_team_score %></div>
+<%= @match.away_team.name %>: <%= @match.away_team_score %>
+<br>
+<br>
+<button><%= link_to "Back to Matches", matches_path %></button>

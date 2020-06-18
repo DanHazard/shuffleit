@@ -1,0 +1,7 @@
+<h1>Change team</h1>
+
+<%= form_for @player do |f| %>
+  <%= f.collection_select :team_id, Team.all, :id, :name  %>
+  <%= f.submit %>
+<% end %>
+

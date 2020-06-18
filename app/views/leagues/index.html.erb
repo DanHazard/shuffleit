@@ -1,0 +1,6 @@
+<h1>Leagues</h3>
+
+ <% @leagues.each do |f| %>
+
+  <li><%= link_to f.name, league_path(f.id) %></li>
+  <% end %> 

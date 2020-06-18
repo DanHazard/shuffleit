@@ -4,4 +4,7 @@
 
 <%= link_to "Back to Players", players_path %>
 <br>
-<button><%= link_to 'Home', home_index_path %></button>
+<button><%= link_to 'Home', home_path %></button>
+<button><%= link_to "Join Team", edit_player_path  %></button>
+<br>
+<%= button_to 'Drop Player', player_path(@player), method: :delete  %>
