@@ -32,12 +32,12 @@ class MatchesController < ApplicationController
     @match.update(match_params)
     redirect_to @match
   end
-
+#capture what they put home and away, validates one or the other . 
 
   private
 
   def match_params
     params.require(:match).permit(:league_id, :home_team_id, :away_team_id, :winner, :home_team_score, :away_team_score)
   end
-  
+
 end

@@ -2,7 +2,7 @@
 
 <h2> Played Games: <% @matches.each do |match|  %></h2>
 <br>
-   <li><%= link_to match.winner, match_path(match.id) %></li>
+   <li><%= link_to match.winner, match %></li>
 <% end %>
 
 <br>

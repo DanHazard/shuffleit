@@ -1,21 +1,26 @@
 <h1>New Match</h1>
-
 <% if @match.errors.any? %>
   <% @match.errors.full_messages.each do |message| %>
-     <div><%= message %> </div>
+    <div><%= message %> </div>
   <%end%>
   <br>
 <%end%>
-
-
 <%= form_for @match do |info| %>
-  <div>Select League: <%= info.collection_select :league_id, League.all, :id, :name, {:selected => :league_id} %></div><br>
-  <div>Select the home team: <%= info.collection_select :home_team_id, Team.all, :id, :name, {:selected => :team_id} %></div><br>
-  <div>Select the away team: <%= info.collection_select :away_team_id, Team.all, :id, :name, {:selected => :team_id} %></div><br>
+  <div>Select League: <%= info.collection_select :league_id, League.all, :id, :name, {:selected => :league_id} %></div>
+  <br>
+  <div>Select the home team: <%= info.collection_select :home_team_id, Team.all, :id, :name, {:selected => :team_id} %></div>
+  <br>
+  <div>Select the away team: <%= info.collection_select :away_team_id, Team.all, :id, :name, {:selected => :team_id} %></div>
+  <br>
   <%= info.label :home_team_score %>
-  <%= info.text_field :home_team_score %><br><br>
+  <%= info.text_field :home_team_score %><br>
+  <br>
   <%= info.label :away_team_score %>
-  <%= info.text_field :away_team_score %><br><br>
-  <div>Which team won: <%= info.collection_select :team_id, Team.all, :id, :name, {:selected => :team_id} %></div><br>
+  <%= info.text_field :away_team_score %><br>
+  <br>
+  <div>Which team won: <%= info.label :winner %></div>
+  <br>
+  <div><%= info.text_field :winner %></div>
+  <br>
   <%= info.submit  %>
 <% end %>
