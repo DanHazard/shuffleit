@@ -9,7 +9,7 @@
 
 
 <%= form_for @match do |info| %>
-  <div>League: <%=  %>
+  <div>Select League: <%= info.collection_select :league_id, League.all, :id, :name, {:selected => :league_id} %></div><br>
   <div>Select the home team: <%= info.collection_select :home_team_id, Team.all, :id, :name, {:selected => :team_id} %></div><br>
   <div>Select the away team: <%= info.collection_select :away_team_id, Team.all, :id, :name, {:selected => :team_id} %></div><br>
   <%= info.label :home_team_score %>
